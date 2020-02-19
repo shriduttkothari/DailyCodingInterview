@@ -41,6 +41,10 @@ import java.util.stream.Collectors;
  * 5. Create Custom HotelRatings Object with hotel id and count of words matched</br>
  * 6. Sort the List of HotelRatings using Comparable based on HotelRating and HotelId</br></br>
  * 
+ * </br></br><b>Time Complexity:</b></br>
+ * Big O(M * N)
+ * Where M is the number of hotels, N is the number of words in all the reviews of any hotel
+ *
  * @author Shridutt.Kothari
  *
  */
