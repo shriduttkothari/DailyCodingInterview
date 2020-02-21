@@ -38,8 +38,8 @@ public class SquareRootInTwoArray {
 
 	public static void main(String[] args) {
 
-		int[] a = new int[] { 3, 1, 4, 5, 19, 6 };
-		int[] b = new int[] { 14, 9, 22, 36, 8, 0, 64, 25 };
+		int[] a = { 3, 1, 4, 5, 19, 6 };
+		int[] b = { 14, 9, 22, 36, 8, 0, 64, 25 };
 
 		ArrayList<Integer> resultArray = findSquareRootsFromFirstArray(a, b);
 
