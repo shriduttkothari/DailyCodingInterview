@@ -92,8 +92,11 @@ public class SearchAndSortHotel {
 
 	private static HotelRatings buildHotelRating(Hotel hotelReview, List<String> listOfWords) {
 		int wordsCount = (int) hotelReview.reviews.parallelStream()
-				.flatMap(review -> Arrays.stream(review.toLowerCase().split(" "))) // ["word1", word2, "word3"...]
-				.map(word -> word.replaceAll("[,.]", "")).filter(word -> listOfWords.contains(word)).count();
+						.map(eachReview -> eachReview.toLowerCase())
+						.flatMap(eachReview -> Arrays.stream(eachReview.split(" "))) //Convert "word1 word2 word3" to ["word1", word2, "word3"...]
+						.map(eachWord -> eachWord.replaceAll("[,.]", ""))
+						.filter(eachWord -> listOfWords.contains(eachWord))
+						.count();
 		return new HotelRatings(hotelReview.hotelId, wordsCount);
 
 	}
