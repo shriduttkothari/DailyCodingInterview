@@ -77,9 +77,9 @@ public class FindSquares {
 	}
 
 	private static int findMinimumNumberOfCoins(int totalAmount, List<Integer> denominations) {
-
-		int[] minNumbers = new int[totalAmount + 1];
-		Arrays.setAll(minNumbers, i -> Integer.MAX_VALUE);
+		int[] minNumbers = new int[totalAmount + 1]; // We need to start from 0 amount so we need 1 extra index
+		// fill with infinitely large number, so for min we always get value compared with it 
+		Arrays.setAll(minNumbers, i -> Integer.MAX_VALUE); 
 
 		minNumbers[0] = 0; // for zero amount we always need 0 denominations
 
