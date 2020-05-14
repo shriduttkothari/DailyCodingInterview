@@ -4,7 +4,6 @@ In This repository I will be pushing solution to one coding problem daily, to ma
 
 # Codeing Problems:
 - I will be taking coding problems from internet and will try to solve them.
-- Will mention the source of the problem.
 
 # Codeing Languages:
 - Java
