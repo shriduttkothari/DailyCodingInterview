@@ -65,23 +65,22 @@ public class LinkedStringLikeAntakshari {
 			endCharMap.put(Character.toString(eachString.charAt(eachString.length() - 1)).toUpperCase(), eachString);
 		}
 
-		int index = 0;
-		Iterator<String> keyIterator = startCharMap.keySet().iterator();
-		while (keyIterator.hasNext()) {
-			String currentKey = keyIterator.next();
-			if (!endCharMap.keySet().contains(currentKey)) {
-				output[index++] = startCharMap.get(currentKey);
+		Set<String> startCharKeySet = startCharMap.keySet();
+		Iterator<String> startCharKeyIterator = startCharKeySet.iterator();
+		while (startCharKeyIterator.hasNext()) {
+			String currentStartCharKey = startCharKeyIterator.next();
+			if (!endCharMap.keySet().contains(currentStartCharKey)) {
+				output[0] = startCharMap.get(currentStartCharKey);
+				break;
 			}
 		}
-		Set<String> keySet = startCharMap.keySet();
-		Iterator<String> keyIterator2 = keySet.iterator();
-		while (keyIterator2.hasNext()) {
+
+		for (int index = 1; index < output.length; index++) {
 			String lastWord = output[index - 1];
-			char charForNewWord = lastWord.charAt(lastWord.length() - 1);
-			if (keySet.contains(Character.toString(charForNewWord).toUpperCase())) {
-				output[index++] = startCharMap.get(Character.toString(charForNewWord).toUpperCase());
+			char startCharForNewWord = lastWord.charAt(lastWord.length() - 1);
+			if (startCharKeySet.contains(Character.toString(startCharForNewWord).toUpperCase())) {
+				output[index] = startCharMap.get(Character.toString(startCharForNewWord).toUpperCase());
 			}
-			keyIterator2.next();
 		}
 		return output;
 	}
